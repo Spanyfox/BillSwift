@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SlideBar from "../components/SlideBar";
-import SearchItem from "../components/SearchItemBill";
+import SearchItemBill from "../components/SearchItemBill";
 import Table from "../components/Table";
 
 const BillPage = () => {
@@ -21,17 +21,24 @@ const BillPage = () => {
     setItems((prevItems) => [...prevItems, newItem]);
   };
 
+  const generatePDF = () => {
+    console.log("Triggered");
+  };
+
   return (
     <div>
       <div className="flex">
         <SlideBar />
         <div className="w-[100%] flex flex-col items-center">
           <div className="relative w-full">
-            <SearchItem onItemSelect={addItem} />
+            <SearchItemBill onItemSelect={addItem} name="Add Products" />
           </div>
           <Table items={items} setItems={setItems} />
           <div className="flex justify-end mt-10 w-[90%] gap-7">
-            <button className="px-3 text-[15px] p-3 rounded-[7px] border border-gray-300 font-bold transition-all duration-300 [&:hover]:bg-gray-900 [&:hover]:text-white">
+            <button
+              className="px-3 text-[15px] p-3 rounded-[7px] border border-gray-300 font-bold transition-all duration-300 [&:hover]:bg-gray-900 [&:hover]:text-white"
+              onClick={generatePDF}
+            >
               Print
             </button>
             <div className="border text-[15px] p-3 bg-gray-900 text-white rounded-[10px]">

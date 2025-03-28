@@ -70,14 +70,14 @@ const SearchItemInventory = ({ onItemHighlight, name }) => {
     fetchData(value);
   };
 
-  const handleResultClick = (result) => {
-    // Set the formatted input
-    const formattedInput = `${result.product} - ${result.quantity || 1} - ${
-      result.mrp || 0
-    }`;
-    setInput(formattedInput);
-    setShowResults(false);
-  };
+  // const handleResultClick = (result) => {
+  //   // Set the formatted input
+  //   const formattedInput = `${result.product} - ${result.quantity || 1} - ${
+  //     result.mrp || 0
+  //   }`;
+  //   setInput(formattedInput);
+  //   setShowResults(false);
+  // };
 
   const onItemSelect = (item) => {
     setInput(item.product);
@@ -105,7 +105,7 @@ const SearchItemInventory = ({ onItemHighlight, name }) => {
   };
 
   return (
-    <div className="relative w-full flex justify-center">
+    <div className="relative w-full flex justify-center"> 
       <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white w-[90%] h-[35px] mt-10 gap-2">
         <FaSearch className="text-gray-500 mr-2 text-[15px]" />
         <input
